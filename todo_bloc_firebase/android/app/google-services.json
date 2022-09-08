@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "323190309971",
+    "project_id": "fir-bloc-df989",
+    "storage_bucket": "fir-bloc-df989.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:323190309971:android:c122547112644d916a32a6",
+        "android_client_info": {
+          "package_name": "com.example.todo_bloc_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "323190309971-3frcod3fi3cfrjod72p0l40v96c378v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHBm29NicgW0HsxqMmknuVliGHCjGYqa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "323190309971-3frcod3fi3cfrjod72p0l40v96c378v2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

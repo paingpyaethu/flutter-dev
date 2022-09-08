@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_bloc_firebase/bloc_page/bloc_event.dart';
+import 'package:todo_bloc_firebase/bloc_page/bloc_page.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
@@ -80,6 +83,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       return null;
                                     },
                                   )),
+                                  SizedBox(
+                                    height: 12,
+                                  ),
                                   Container(
                                       child: TextFormField(
                                     controller: emailController,
@@ -122,7 +128,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             height: 15,
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () =>
+                                  BlocProvider.of<BlocPage>(context)
+                                      .add(LoginEvent()),
                               child: Text(
                                   "Already have an account? Please Login!")),
                           Container(
