@@ -39,6 +39,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        /*
+        ==== Slider Section ====
+        */
         Container(
           // color: Colors.red,
           height: Dimensions.pageView,
@@ -49,6 +52,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 return _buildPageItem(position);
               }),
         ),
+        /*
+        ==== Dots ====
+        */
         new DotsIndicator(
           dotsCount: 5,
           position: _currentPageValue,
@@ -58,7 +64,110 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               activeColor: AppColors.mainColor,
               activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5.0))),
-        )
+        ),
+        /*
+        ==== Popular Text ====
+        */
+        SizedBox(
+          height: Dimensions.height20,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width25),
+          // color: Colors.amber,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: 'Popular'),
+              SizedBox(
+                width: Dimensions.width10,
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: Dimensions.height5),
+                child: SmallText(text: 'Food Paring'),
+              ),
+            ],
+          ),
+        ),
+        /*
+        ==== List of Foods and Images ====
+        */
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: ((context, index) {
+              return Container(
+                margin: EdgeInsets.symmetric(horizontal: Dimensions.width20),
+                padding: EdgeInsets.only(bottom: Dimensions.height10),
+                // color: Colors.black26,
+                child: Row(children: [
+                  /*
+                  ==== Image Section ====
+                  */
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius20),
+                        color: Colors.black,
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage("assets/images/food-1.jpeg"))),
+                  ),
+
+                  /*
+                  ==== Text Section ====
+                  */
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius20),
+                              bottomRight:
+                                  Radius.circular(Dimensions.radius20)),
+                          color: Colors.white),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: Dimensions.width10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BigText(text: 'Nutritious Fruit Meal in China'),
+                            SizedBox(
+                              height: Dimensions.height10,
+                            ),
+                            SmallText(text: 'With Chinese Characteristics'),
+                            SizedBox(
+                              height: Dimensions.height10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndText(
+                                    icon: Icons.circle_sharp,
+                                    text: 'Normal',
+                                    iconColor: AppColors.iconColor1),
+                                IconAndText(
+                                    icon: Icons.location_on,
+                                    text: '1.7km',
+                                    iconColor: AppColors.iconColor2),
+                                IconAndText(
+                                    icon: Icons.timer_sharp,
+                                    text: '32min',
+                                    iconColor: AppColors.iconColor3),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
+              );
+            })),
       ],
     );
   }

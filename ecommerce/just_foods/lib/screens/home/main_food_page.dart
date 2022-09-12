@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:just_foods/home/food_page_body.dart';
+import 'package:just_foods/screens/home/food_page_body.dart';
 import 'package:just_foods/utils/colors.dart';
 import 'package:just_foods/utils/dimensions.dart';
 import 'package:just_foods/widgets/big_text.dart';
@@ -67,9 +67,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ],
               )),
         ),
-
         //Showing the Body
-        FoodPageBody()
+        Expanded(
+            child: SingleChildScrollView(
+          child: FoodPageBody(),
+        ))
       ],
     ));
   }
