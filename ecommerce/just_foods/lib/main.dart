@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:just_foods/screens/food/slider_food_detail.dart';
 import 'package:just_foods/screens/home/main_food_page.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
+      // home: MainFoodPage(),
+      home: SliderFoodDetail(),
     );
   }
 }
